@@ -6,6 +6,70 @@
   <title>Portfolio — Rayhan Ahmed</title>
   <meta name="description" content="Rayhan Ahmed rana— CSE Student • Developer • Problem Solver" />
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Dropdown Styles */
+    .nav-item {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      min-width: 200px;
+      z-index: 1000;
+      margin-top: 8px;
+      padding: 8px 0;
+    }
+
+    .dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      color: #333;
+      text-decoration: none;
+      transition: background 0.2s;
+      font-size: 14px;
+    }
+
+    .dropdown a:hover {
+      background: #f5f5f5;
+    }
+
+    .dropdown-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    .nav-item.active .dropdown {
+      display: block;
+    }
+
+    .dropdown-arrow {
+      display: inline-block;
+      margin-left: 4px;
+      font-size: 10px;
+      transition: transform 0.2s;
+    }
+
+    .nav-item.active .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Contact dropdown specific styles */
+    .contact-dropdown {
+      right: 0;
+      left: auto;
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
@@ -20,8 +84,44 @@
       </div>
       <nav>
         <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <div class="nav-item">
+          <a href="#about" class="about-link">About <span class="dropdown-arrow">▼</span></a>
+          <div class="dropdown">
+            <a href="https://www.codechef.com/users/rayhanahmed_mu" target="_blank">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/free-codechef-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-2945080.png" alt="CodeChef" class="dropdown-icon">
+              <span>CodeChef</span>
+            </a>
+            <a href="https://codeforces.com/profile/rayhan_mu" target="_blank">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/free-code-forces-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-2-pack-logos-icons-3029920.png" alt="Codeforces" class="dropdown-icon">
+              <span>Codeforces</span>
+            </a>
+            <a href="https://github.com/RAYHAN-MU" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="dropdown-icon">
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/rayhan-ahmed-ra" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="dropdown-icon">
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://www.facebook.com/itz.rayhan.940" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" class="dropdown-icon">
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="#contact" class="contact-link">Contact <span class="dropdown-arrow">▼</span></a>
+          <div class="dropdown contact-dropdown">
+            <a href="mailto:rayhanahmed53432@gmail.com">
+              <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="dropdown-icon">
+              <span>rayhanahmed53432@gmail.com</span>
+            </a>
+            <a href="tel:+8801601353432">
+              <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone" class="dropdown-icon">
+              <span>+880 1601 353 432</span>
+            </a>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -49,7 +149,9 @@
     <!-- About -->
     <section id="about" class="card about">
       <h3>About me</h3>
-      <p>BSc(Eng) in Computer Science and Engineering (CGPA: 3.55/4.00 upto 8th semester). Experienced in solving 700+ coding problems and participating in 300+ contests on platforms like Codeforces and CodeChef. I love mathematics, machine learning, and deep learning.</p>
+      <p>BSc(Eng) in Computer Science and Engineering (CGPA: 3.55/4.00 upto 8th semester). Experienced in solving 700+ coding problems and participating in 300+ contests on platforms like Codeforces and CodeChef. I love mathematics, machine learning, and deep learning.
+
+Successfully completed training on "Python Programming and Basic Data Science" (80 hours) conducted by the Institute of Information and Communication Technology (IICT), Shahjalal University of Science & Technology from July 2024 to November 2024, under Enhancing Digital Government and Economy (EDGE) Project of Bangladesh Computer Council, ICT Division.</p>
       <div class="skills">
         <span class="chip">C</span>
         <span class="chip">C++</span>
@@ -61,11 +163,11 @@
         <span class="chip">Matplotlib</span>
         <span class="chip">HTML</span>
         <span class="chip">CSS</span>
-        <span class="chip">JavaScript</span>
-        <span class="chip">MySQL</span>
       </div>
-      <div style="margin-top:12px;">
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
         <a class="btn" href="assets/rayhan_final_cv.pdf" download>Download CV</a>
+        <a class="btn" href="assets/academic_record.pdf" download>Download Academic Record</a>
+        <a class="btn" href="assets/government_certificate.pdf" download>Download Government Certificate</a>
       </div>
     </section>
 
@@ -75,31 +177,30 @@
       <div class="projects-grid">
 
         <!-- Hospital Management System -->
-          <div class="proj card">
-      <a href="https://rayhan-mu.github.io/hospital-management-final-project/" target="_blank">
-        <img src="C:\Users\rayha\Downloads\portfolio\assets\Screenshot (29).png" alt="Hospital Management System Screenshot">
-        <div class="pmeta">
-          <h4>Hospital Management System</h4>
-          <p>HTML • CSS </p>
-          <p class="project-desc">Complete hospital management solution with user authentication, patient records, appointments, doctor management, and reporting system with search functionality.</p>
+        <div class="proj card">
+          <a href="https://rayhan-mu.github.io/hospital-management-final-project/" target="_blank">
+            <img src="assets/Screenshot (29).png" alt="Hospital Management System Screenshot">
+            <div class="pmeta">
+              <h4>Hospital Management System</h4>
+              <p>HTML • CSS </p>
+              <p class="project-desc">Complete hospital management solution with user authentication, patient records, appointments, doctor management, and reporting system with search functionality.</p>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
 
         <!-- Calculator -->
-<div class="proj card">
-  <a href="https://rayhan-mu.github.io/my-Calculator/" target="_blank">
-    <img src="C:\Users\rayha\Downloads\portfolio\assets\Screenshot (30).png" alt="Calculator Project" class="project-img" />
-    <div class="pmeta">
-      <h4>Calculator</h4>
-      <p>HTML • CSS • JavaScript</p>
-      <p class="project-desc">
-        Browser-based calculator application with comprehensive arithmetic operations and a user-friendly interface.
-      </p>
-    </div>
-  </a>
-</div>
-
+        <div class="proj card">
+          <a href="https://rayhan-mu.github.io/my-Calculator/" target="_blank">
+            <img src="assets/Screenshot (30).png" alt="Calculator Project" class="project-img" />
+            <div class="pmeta">
+              <h4>Calculator</h4>
+              <p>HTML • CSS • JavaScript</p>
+              <p class="project-desc">
+                Browser-based calculator application with comprehensive arithmetic operations and a user-friendly interface.
+              </p>
+            </div>
+          </a>
+        </div>
 
         <!-- Competitive Programming -->
         <div class="proj card">
@@ -107,7 +208,7 @@
           <div class="pmeta">
             <h4>Competitive Programming</h4>
             <p>C++ • Algorithms • Data Structures</p>
-            <p class="project-desc">700+ problems solved on Codeforces and CodeChef. Expertise in graph algorithms, dynamic programming, and optimization.</p>
+            <p class="project-desc">Solved 700+ problems on platforms such as Codeforces, CodeChef, VJudge, and LeetCode, demonstrating strong algorithmic and analytical abilities. Expertise in graph algorithms, dynamic programming, and optimization.</p>
           </div>
         </div>
 
@@ -134,5 +235,47 @@
   <footer>
     © Rayhan Ahmed — Built with HTML & CSS
   </footer>
+
+  <script>
+    // Dropdown functionality for About
+    const aboutNavItem = document.querySelector('.nav-item:first-of-type');
+    const aboutLink = document.querySelector('.about-link');
+
+    aboutLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      aboutNavItem.classList.toggle('active');
+      // Close contact dropdown if open
+      contactNavItem.classList.remove('active');
+    });
+
+    // Dropdown functionality for Contact
+    const contactNavItem = document.querySelector('.nav-item:last-of-type');
+    const contactLink = document.querySelector('.contact-link');
+
+    contactLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      contactNavItem.classList.toggle('active');
+      // Close about dropdown if open
+      aboutNavItem.classList.remove('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!aboutNavItem.contains(e.target)) {
+        aboutNavItem.classList.remove('active');
+      }
+      if (!contactNavItem.contains(e.target)) {
+        contactNavItem.classList.remove('active');
+      }
+    });
+
+    // Prevent dropdowns from closing when clicking inside them
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
 </body>
 </html>
